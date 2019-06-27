@@ -8,14 +8,17 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   <link rel="stylesheet" type="text/css" href="./assets/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/css/docs.min.css" />
   <title>adams_zhou blog</title>
   <script type="text/javascript">
+  
+	$("#content").load("page/notebook.html");
     function change_page(arg) {
       if (arg == 'notebook') {
-        $("#context").load("page/notebook.html");
+        $("#content").load("page/notebook.html");
       }
       if (arg == 'other') {
-        $("#context").load("page/other.html");
+        $("#content").load("page/other.html");
       }
     }
   </script>
@@ -25,26 +28,61 @@
   <script src="./assets/js/popper.min.js"></script>
   <script src="./assets/js/bootstrap.min.js"></script>
   <script src="./assets/js/marked.min.js"></script>
-  
-  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-    <a class="navbar-brand" href="#"><i class="fa fa-audio-description fa-2x" aria-hidden="true"></i></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:change_page('notebook');" >笔记本</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:change_page('other')">其他</a>
-        </li>
-       </ul>
-    </div>
-  </nav>
-  <div id="context" class="container"></div>
-  <script>
-	$("#context").load("page/notebook.html");
-  </script>
+    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar ">
+		<div class="navbar-nav-scroll">
+			<ul class="navbar-nav bd-navbar-nav flex-row">
+				<li class="nav-item">
+					<a class="nav-link " href="#" >Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="javascript:change_page('notebook');" >笔记本</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="javascript:change_page('other')">其他</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">11111111</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">22222222</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<div class="container-fluid">
+		<div class="row flex-xl-nowrap">
+			<div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+				<form class="bd-search d-flex align-items-center">
+					<input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off" data-docs-version="4.3">
+					<button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" 
+						data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false">
+							<title>Menu</title>
+							<path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/>
+						</svg>
+					</button>
+				</form>
+				<nav class="collapse bd-links" id="bd-docs-nav">
+					<div class="bd-toc-item active">
+						<ul class="nav bd-sidenav">
+							<li class="active bd-sidenav-active">
+								<a class="nav-link active" href="" >Active</a>
+							</li>
+							<li class="active bd-sidenav-active">
+								<a class="nav-link" href="">Link</a>
+							</li>
+							<li class="active bd-sidenav-active">
+								<a class="nav-link" href="">Link</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			
+			<main id="content" class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+				内容
+			</main>
+		</div>
+	<div>
 </body>
 </html>
