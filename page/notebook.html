@@ -1,3 +1,16 @@
+<script>
+  function change_category(arg) {
+    if (arg == 'db') {
+     $("#content").load("../page/db.html");
+    }
+    if (arg == 'language') {
+     $("#content").load("../page/language.html");
+    }
+    if (arg == 'dp') {
+     $("#content").load("../page/dp.html");
+    }
+  }
+</script>
 <div class="row flex-xl-nowrap">
   <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
     <form class="bd-search d-flex align-items-center">
@@ -13,18 +26,18 @@
       <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
           <li class="active bd-sidenav-active">
-            <a class="nav-link active" href="" >Active</a>
+            <a class="nav-link active" href="javascript:change_category('db');" >Data base</a>
           </li>
           <li class="active bd-sidenav-active">
-            <a class="nav-link" href="">Link</a>
+            <a class="nav-link" href="javascript:change_category('language');">Language</a>
           </li>
           <li class="active bd-sidenav-active">
-            <a class="nav-link" href="">Link</a>
+            <a class="nav-link" href="javascript:change_category('dp');">Design patterns</a>
           </li>
         </ul>
       </div>
     </nav>
   </div>
 
-  <main id="xxxxx" class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">内容</main>
+  <main id="content" class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">内容</main>
 </div>
