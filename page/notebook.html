@@ -1,13 +1,22 @@
 <script>
   function change_category(arg) {
     if (arg == 'db') {
-     $("#content").load("../page/db.html");
+     $("#db").attr("class", "nav-link active");
+     $("#language").attr("class", "nav-link");
+     $("#dp").attr("class", "nav-link");
+     $("#main").load("../page/notebook/db.html");
     }
     if (arg == 'language') {
-     $("#content").load("../page/language.html");
+     $("#db").attr("class", "nav-link");
+     $("#language").attr("class", "nav-link active");
+     $("#dp").attr("class", "nav-link");
+     $("#main").load("../page/notebook/language.html");
     }
     if (arg == 'dp') {
-     $("#content").load("../page/dp.html");
+     $("#db").attr("class", "nav-link");
+     $("#language").attr("class", "nav-link");
+     $("#dp").attr("class", "nav-link active");
+     $("#main").load("../page/notebook/dp.html");
     }
   }
 </script>
@@ -26,18 +35,18 @@
       <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
           <li class="active bd-sidenav-active">
-            <a class="nav-link active" href="javascript:change_category('db');" >Data base</a>
+            <a class="nav-link id="db"active" href="javascript:change_category('db');" >Data base</a>
           </li>
           <li class="active bd-sidenav-active">
-            <a class="nav-link" href="javascript:change_category('language');">Language</a>
+            <a class="nav-link" id="language" href="javascript:change_category('language');">Language</a>
           </li>
           <li class="active bd-sidenav-active">
-            <a class="nav-link" href="javascript:change_category('dp');">Design patterns</a>
+            <a class="nav-link" id="dp" href="javascript:change_category('dp');">Design patterns</a>
           </li>
         </ul>
       </div>
     </nav>
   </div>
 
-  <main id="content" class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">内容</main>
+  <main id="main" class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">内容</main>
 </div>
