@@ -13,12 +13,24 @@
   <script type="text/javascript">
     function change_page(arg) {
       if (arg == 'home') {
+	$("#home").attr("class", "nav-link active");
+	$("#notebook").attr("class", "nav-link");
+	$("#other").attr("class", "nav-link");
+	$("#aboutme").attr("class", "nav-link");
         $("#content").load("page/home.html");
       }
       if (arg == 'notebook') {
+	$("#home").attr("class", "nav-link");
+	$("#notebook").attr("class", "nav-link active");
+	$("#other").attr("class", "nav-link");
+	$("#aboutme").attr("class", "nav-link");
         $("#content").load("page/notebook.html");
       }
       if (arg == 'other') {
+	$("#home").attr("class", "nav-link");
+	$("#notebook").attr("class", "nav-link");
+	$("#other").attr("class", "nav-link active");
+	$("#aboutme").attr("class", "nav-link");
         $("#content").load("page/other.html");
       }
     }
@@ -34,16 +46,16 @@
     <div class="navbar-nav-scroll">
       <ul class="navbar-nav bd-navbar-nav flex-row">
         <li class="nav-item">
-          <a class="nav-link active" href="javascript:change_page('home');" >Home</a>
+          <a class="nav-link active" id="home" href="javascript:change_page('home');" >Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:change_page('notebook');" >Note Book</a>
+          <a class="nav-link" id="notebook" href="javascript:change_page('notebook');" >Note Book</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:change_page('other')">Other</a>
+          <a class="nav-link" id="other" href="javascript:change_page('other')">Other</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/">about me</a>
+          <a class="nav-link" id="aboutme" href="/">about me</a>
         </li>
       </ul>
     </div>
