@@ -1,73 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-  <link rel="stylesheet" type="text/css" href="./assets/css/font-awesome.min.css" />
-  <link rel="stylesheet" type="text/css" href="./assets/css/docs.min.css" />
-  <title>adams_zhou blog</title>
-  <script type="text/javascript">
-     function change_page(arg) {
-      if (arg == 'home') {
-	$("#home").attr("class", "nav-link active");
-	$("#notebook").attr("class", "nav-link");
-	$("#other").attr("class", "nav-link");
-	$("#aboutme").attr("class", "nav-link");
-        $("#content").load("page/home.html");
-      }
-      if (arg == 'notebook') {
-	$("#home").attr("class", "nav-link");
-	$("#notebook").attr("class", "nav-link active");
-	$("#other").attr("class", "nav-link");
-	$("#aboutme").attr("class", "nav-link");
-        $("#content").load("page/notebook.html");
-      }
-      if (arg == 'other') {
-	$("#home").attr("class", "nav-link");
-	$("#notebook").attr("class", "nav-link");
-	$("#other").attr("class", "nav-link active");
-	$("#aboutme").attr("class", "nav-link");
-        $("#content").load("page/other.html");
-      }
-      if (arg == 'aboutme') {
-	$("#home").attr("class", "nav-link");
-	$("#notebook").attr("class", "nav-link");
-	$("#other").attr("class", "nav-link");
-	$("#aboutme").attr("class", "nav-link active");
-        $("#content").load("md/demo.md");
-      }
-    }
-  </script>
+  <title>MyblogUi</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <script src="./assets/js/jquery.min.js"></script>
-  <script src="./assets/js/popper.min.js"></script>
-  <script src="./assets/js/bootstrap.min.js"></script>
-  <script src="./assets/js/marked.min.js"></script>
-  <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar ">
-    <a class="navbar-brand mr-0 mr-md-2" href="/"><i class="fa fa-audio-description fa-2x" aria-hidden="true"></i></a>
-    <div class="navbar-nav-scroll">
-      <ul class="navbar-nav bd-navbar-nav flex-row">
-        <li class="nav-item">
-          <a class="nav-link active" id="home" href="javascript:change_page('home');" >Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="notebook" href="javascript:change_page('notebook');" >Note Book</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="other" href="javascript:change_page('other')">Other</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="aboutme" href="javascript:change_page('aboutme')">about me</a>
-        </li>
-      </ul>
-    </div>
-   </header>
-  <div id="content" class="container-fluid"><div>
-  <script>$("#content").load("page/home.html");</script>
-</body>
+  <app-root></app-root>
+<script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="es2015-polyfills.js" nomodule></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="styles.js"></script><script type="text/javascript" src="vendor.js"></script><script type="text/javascript" src="main.js"></script></body>
 </html>
