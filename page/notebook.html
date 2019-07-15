@@ -1,22 +1,25 @@
 <script>
   function change_category(arg) {
-    if (arg == 'db') {
-     $("#db").attr("class", "nav-link active");
-     $("#language").attr("class", "nav-link");
-     $("#dp").attr("class", "nav-link");
-     $("#main").load("../page/md_demo.html");
+    if (arg == 'oracle') {
+     $("#oracle").attr("class", "active bd-sidenav-active");
+     $("#db2").attr("class", "");
+     $("#mysql").attr("class", "");
+     $("#postgre").attr("class", "");
+     $("#main").load("../page/notebook/md_demo.html");
     }
-    if (arg == 'language') {
-     $("#db").attr("class", "nav-link");
-     $("#language").attr("class", "nav-link active");
-     $("#dp").attr("class", "nav-link");
-     $("#main").load("../page/notebook/language.html");
+    if (arg == 'db2') {
+     $("#db2").attr("class", "active bd-sidenav-active");
+     $("#oracle").attr("class", "");
+     $("#mysql").attr("class", "");
+     $("#postgre").attr("class", "");
+     $("#main").load("../page/notebook/md_demo.html");
     }
-    if (arg == 'dp') {
-     $("#db").attr("class", "nav-link");
-     $("#language").attr("class", "nav-link");
-     $("#dp").attr("class", "nav-link active");
-     $("#main").load("../page/notebook/dp.html");
+    if (arg == 'mysql') {
+     $("#mysql").attr("class", "active bd-sidenav-active");
+     $("#oracle").attr("class", "");
+     $("#db2").attr("class", "");
+     $("#postgre").attr("class", "");
+     $("#main").load("../page/notebook/md_demo.html");
     }
   }
 </script>
@@ -38,16 +41,16 @@
         </a>
         <ul class="nav bd-sidenav">
           <li class="active bd-sidenav-active">
-            <a href="javascript:change_category('db');" >Oracle</a>
+            <a id="oracle" href="javascript:change_category('oracle');" >Oracle</a>
           </li>
           <li>
-            <a href="javascript:change_category('language');">DB2</a>
+            <a id="db2" href="javascript:change_category('db2');">DB2</a>
           </li>
           <li>
-            <a href="javascript:change_category('language');">Mysql</a>
+            <a id="mysql" href="javascript:change_category('mysql');">Mysql</a>
           </li>
           <li>
-            <a href="javascript:change_category('language');">Postgresql</a>
+            <a id="postgre" href="javascript:change_category('postgre');">Postgresql</a>
           </li>
         </ul>
         <a class="bd-toc-link" href="javascript:change_category('language');">
