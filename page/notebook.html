@@ -1,4 +1,12 @@
 <script>
+  function display_db(arg) {
+    if (arg == 'db') {
+     $("#oracle").attr("style", "display:none");
+     $("#db2").attr("style", "display:none");
+     $("#mysql").attr("style", "display:none");
+     $("#postgre").attr("style", "display:none");
+    }
+  }
   function change_category(arg) {
     if (arg == 'oracle') {
      $("#oracle").attr("class", "active bd-sidenav-active");
@@ -43,7 +51,7 @@
     </form>
     <nav class="collapse bd-links" id="bd-docs-nav">
       <div class="bd-toc-item active">
-        <a class="bd-toc-link" href="javascript:change_category('db');">
+        <a class="bd-toc-link" href="javascript:display_db('db');">
           Data base
         </a>
         <ul class="nav bd-sidenav">
