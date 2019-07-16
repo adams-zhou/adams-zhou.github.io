@@ -21,6 +21,13 @@
      $("#postgre").attr("class", "");
      $("#main").load("../page/notebook/md_demo.html");
     }
+    if (arg == 'postgre') {
+     $("#postgre").attr("class", "active bd-sidenav-active");
+     $("#mysql").attr("class", "");
+     $("#oracle").attr("class", "");
+     $("#db2").attr("class", "");
+     $("#main").load("../page/notebook/md_demo.html");
+    }
   }
 </script>
 <div class="row flex-xl-nowrap">
