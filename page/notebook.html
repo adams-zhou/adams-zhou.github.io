@@ -1,10 +1,21 @@
 <script>
+  var dbDetailDisplayFlg = false;
   function display_db(arg) {
-    if (arg == 'db') {
-     $("#oracle").attr("style", "display:none");
-     $("#db2").attr("style", "display:none");
-     $("#mysql").attr("style", "display:none");
-     $("#postgre").attr("style", "display:none");
+    if (arg == 'db'){
+     if (dbDetailDisplayFlg == false) {
+       $("#oracle").attr("style", "");
+       $("#db2").attr("style", "");
+       $("#mysql").attr("style", "");
+       $("#sybase").attr("style", "");
+       $("#postgre").attr("style", "");
+     }else {
+       $("#oracle").attr("style", "display:none");
+       $("#db2").attr("style", "display:none");
+       $("#mysql").attr("style", "display:none");
+       $("#sybase").attr("style", "display:none");
+       $("#postgre").attr("style", "display:none");
+      }
+      dbDetailDisplayFlg = !dbDetailDisplayFlg;
     }
   }
   function change_category(arg) {
@@ -12,29 +23,41 @@
      $("#oracle").attr("class", "active bd-sidenav-active");
      $("#db2").attr("class", "");
      $("#mysql").attr("class", "");
+     $("#sybase").attr("class", "");
      $("#postgre").attr("class", "");
-     $("#main").load("../page/notebook/md_demo.html");
+     $("#main").load("../page/notebook/md_display.html", function(){$("#category").val('oracle')});
     }
     if (arg == 'db2') {
      $("#db2").attr("class", "active bd-sidenav-active");
      $("#oracle").attr("class", "");
      $("#mysql").attr("class", "");
+     $("#sybase").attr("class", "");
      $("#postgre").attr("class", "");
-     $("#main").load("../page/notebook/md_demo.html");
+     $("#main").load("../page/notebook/md_display.html", function(){$("#category").val('db2')});
     }
     if (arg == 'mysql') {
      $("#mysql").attr("class", "active bd-sidenav-active");
      $("#oracle").attr("class", "");
      $("#db2").attr("class", "");
+     $("#sybase").attr("class", "");
      $("#postgre").attr("class", "");
-     $("#main").load("../page/notebook/md_demo.html");
+     $("#main").load("../page/notebook/md_display.html", function(){$("#category").val('mysql')});
     }
     if (arg == 'postgre') {
      $("#postgre").attr("class", "active bd-sidenav-active");
      $("#mysql").attr("class", "");
      $("#oracle").attr("class", "");
      $("#db2").attr("class", "");
-     $("#main").load("../page/notebook/md_demo.html");
+     $("#sybase").attr("class", "");
+     $("#main").load("../page/notebook/md_display.html", function(){$("#category").val('postgre')});
+    }
+    if (arg == 'sybase') {
+     $("#sybase").attr("class", "active bd-sidenav-active");
+     $("#mysql").attr("class", "");
+     $("#oracle").attr("class", "");
+     $("#db2").attr("class", "");
+     $("#postgre").attr("class", "");
+     $("#main").load("../page/notebook/md_display.html", function(){$("#category").val('sybase')});
     }
   }
 </script>
@@ -55,17 +78,20 @@
           Data base
         </a>
         <ul class="nav bd-sidenav">
-          <li id="oracle" class="active bd-sidenav-active" >
+          <li id="oracle" style="display:none;">
             <a href="javascript:change_category('oracle');" >Oracle</a>
           </li>
-          <li id="db2">
-            <a class="" href="javascript:change_category('db2');">DB2</a>
+          <li id="db2" style="display:none;">
+            <a href="javascript:change_category('db2');">DB2</a>
           </li>
-          <li id="mysql">
-            <a class="" href="javascript:change_category('mysql');">Mysql</a>
+          <li id="mysql" style="display:none;">
+            <a href="javascript:change_category('mysql');">Mysql</a>
           </li>
-          <li id="postgre">
-            <a class="" href="javascript:change_category('postgre');">Postgresql</a>
+          <li id="sybase" style="display:none;">
+            <a href="javascript:change_category('sybase');">Sybase</a>
+          </li>
+          <li id="postgre" style="display:none;">
+            <a href="javascript:change_category('postgre');">Postgresql</a>
           </li>
         </ul>
         <a class="bd-toc-link" href="javascript:change_category('language');">
@@ -80,4 +106,5 @@
   </div>
 
   <main id="main" class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">内容</main>
+  <script>$("#main").load("page/notebook/readme.html");</script>
 </div>
