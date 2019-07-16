@@ -16,3 +16,7 @@ html, body{
     background-attachment:fixed;
     height: 100%
 }
+
+.hide {
+   display: none;
+}
