@@ -13,31 +13,34 @@
   <script type="text/javascript">
      function change_page(arg) {
       if (arg == 'home') {
-	$("#home").attr("class", "nav-link active");
-	$("#notebook").attr("class", "nav-link");
-	$("#other").attr("class", "nav-link");
-	$("#aboutme").attr("class", "nav-link");
+        $("#home").attr("class", "nav-link active");
+        $("#notebook").attr("class", "nav-link");
+        $("#chart").attr("class", "nav-link");
+        $("#aboutme").attr("class", "nav-link");
         $("#content").load("page/home.html");
       }
       if (arg == 'notebook') {
-	$("#home").attr("class", "nav-link");
-	$("#notebook").attr("class", "nav-link active");
-	$("#other").attr("class", "nav-link");
-	$("#aboutme").attr("class", "nav-link");
+        $("#home").attr("class", "nav-link");
+        $("#notebook").attr("class", "nav-link active");
+        $("#chart").attr("class", "nav-link");
+        $("#aboutme").attr("class", "nav-link");
+        $("#content").attr("class", "container-fluid");
         $("#content").load("page/notebook.html");
       }
-      if (arg == 'other') {
-	$("#home").attr("class", "nav-link");
-	$("#notebook").attr("class", "nav-link");
-	$("#other").attr("class", "nav-link active");
-	$("#aboutme").attr("class", "nav-link");
-        $("#content").load("page/other.html");
+      if (arg == 'chart') {
+        $("#home").attr("class", "nav-link");
+        $("#notebook").attr("class", "nav-link");
+        $("#chart").attr("class", "nav-link active");
+        $("#aboutme").attr("class", "nav-link");
+        $("#content").attr("class", "container-fluid");
+        $("#content").load("page/chart.html");
       }
       if (arg == 'aboutme') {
-	$("#home").attr("class", "nav-link");
-	$("#notebook").attr("class", "nav-link");
-	$("#other").attr("class", "nav-link");
-	$("#aboutme").attr("class", "nav-link active");
+        $("#home").attr("class", "nav-link");
+        $("#notebook").attr("class", "nav-link");
+        $("#chart").attr("class", "nav-link");
+        $("#aboutme").attr("class", "nav-link active");
+        $("#content").attr("class", "container-fluid");
         $("#content").load("md/demo.md");
       }
     }
@@ -59,7 +62,7 @@
           <a class="nav-link" id="notebook" href="javascript:change_page('notebook');" >Note Book</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="other" href="javascript:change_page('other')">Other</a>
+          <a class="nav-link" id="chart" href="javascript:change_page('chart')">Chart</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" id="aboutme" href="javascript:change_page('aboutme')">about me</a>

@@ -1,0 +1,97 @@
+<script>
+  // http://api.finance.ifeng.com/akdaily/?code=sh000001&type=last
+  var echartDetailDisplayFlg = false;
+  var d3jsDetailDisplayFlg = false;
+  function display_detail(arg) {
+    if (arg == 'echart'){
+     if (echartDetailDisplayFlg == false) {
+       $("#echart_line").attr("style", "");
+       $("#echart_bar").attr("style", "");
+     }else {
+       $("#echart_line").attr("style", "display:none");
+       $("#echart_bar").attr("style", "display:none");
+      }
+      echartDetailDisplayFlg = !echartDetailDisplayFlg;
+    }
+    if (arg == 'd3js'){
+     if (d3jsDetailDisplayFlg == false) {
+       $("#d3js_line").attr("style", "");
+       $("#d3js_bar").attr("style", "");
+     }else {
+       $("#d3js_line").attr("style", "display:none");
+       $("#d3js_bar").attr("style", "display:none");
+      }
+      d3jsDetailDisplayFlg = !d3jsDetailDisplayFlg;
+    }
+  }
+  function change_category(arg) {
+    if (arg == 'echart_line') {
+      $("#echart_line").attr("class", "active bd-sidenav-active");
+      $("#chart_main").load("../page/chart/echart_line.html");
+    } else {
+      $("#echart_line").attr("class", "");
+    }
+    if (arg == 'echart_bar') {
+      $("#echart_bar").attr("class", "active bd-sidenav-active");
+      $("#chart_main").load("../page/chart/echart_bar.html");
+    } else {
+      $("#echart_bar").attr("class", "");
+    }
+    if (arg == 'd3js_line') {
+      $("#d3js_line").attr("class", "active bd-sidenav-active");
+      $("#chart_main").load("../page/chart/d3js_line.html");
+      
+    } else {
+      $("#d3js_line").attr("class", "");
+    }
+    if (arg == 'd3js_bar') {
+      $("#d3js_bar").attr("class", "active bd-sidenav-active");
+      $("#chart_main").load("../page/chart/d3js_bar.html");
+    } else {
+      $("#d3js_bar").attr("class", "");
+    }
+  }
+</script>
+<div class="row flex-xl-nowrap">
+  <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+    <form class="bd-search d-flex align-items-center">
+      <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off" data-docs-version="4.3">
+      <button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false">
+          <title>Menu</title>
+          <path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/>
+        </svg>
+      </button>
+    </form>
+    <nav class="collapse bd-links" id="bd-docs-nav">
+      <div class="bd-toc-item active">
+        <a class="bd-toc-link" href="javascript:display_detail('echart');">
+          Echart
+        </a>
+        <ul class="nav bd-sidenav">
+          <li id="echart_line" style="display:none;">
+            <a href="javascript:change_category('echart_line');" >&nbsp;line</a>
+          </li>
+          <li id="echart_bar" style="display:none;">
+            <a href="javascript:change_category('echart_bar');">&nbsp;bar</a>
+          </li>
+        </ul>
+        <a class="bd-toc-link" href="javascript:display_detail('d3js');">
+          D3js
+        </a>
+        <ul class="nav bd-sidenav">
+          <li id="d3js_line" style="display:none;">
+            <a href="javascript:change_category('d3js_line');" >&nbsp;Line</a>
+          </li>
+          <li id="d3js_bar" style="display:none;">
+            <a href="javascript:change_category('d3js_bar');">&nbsp;bar</a>
+          </li>
+        </ul>
+       
+      </div>
+    </nav>
+  </div>
+
+  <main id="chart_main" class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">内容</main>
+  <script>$("#chart_main").load("page/chart/readme.html");</script>
+</div>

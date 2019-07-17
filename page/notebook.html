@@ -1,6 +1,7 @@
 <script>
   var dbDetailDisplayFlg = false;
-  function display_db(arg) {
+  var languageDetailDisplayFlg = false;
+  function display_detail(arg) {
     if (arg == 'db'){
      if (dbDetailDisplayFlg == false) {
        $("#oracle").attr("style", "");
@@ -17,47 +18,83 @@
       }
       dbDetailDisplayFlg = !dbDetailDisplayFlg;
     }
+    if (arg == 'language'){
+     if (languageDetailDisplayFlg == false) {
+       $("#java").attr("style", "");
+       $("#javascript").attr("style", "");
+       $("#c").attr("style", "");
+       $("#python").attr("style", "");
+       $("#vb").attr("style", "");
+     }else {
+       $("#java").attr("style", "display:none");
+       $("#javascript").attr("style", "display:none");
+       $("#c").attr("style", "display:none");
+       $("#python").attr("style", "display:none");
+       $("#vb").attr("style", "display:none");
+      }
+      languageDetailDisplayFlg = !languageDetailDisplayFlg;
+    }
   }
   function change_category(arg) {
     if (arg == 'oracle') {
-     $("#oracle").attr("class", "active bd-sidenav-active");
-     $("#db2").attr("class", "");
-     $("#mysql").attr("class", "");
-     $("#sybase").attr("class", "");
-     $("#postgre").attr("class", "");
-     $("#main").load("../page/notebook/md_display.html", function(){$("#category").val('oracle')});
+      $("#oracle").attr("class", "active bd-sidenav-active");
+      $("#notebook_main").load("../page/notebook/md_display.html", function(){$("#category").val('db/oracle')});
+    } else {
+      $("#oracle").attr("class", "");
     }
     if (arg == 'db2') {
-     $("#db2").attr("class", "active bd-sidenav-active");
-     $("#oracle").attr("class", "");
-     $("#mysql").attr("class", "");
-     $("#sybase").attr("class", "");
-     $("#postgre").attr("class", "");
-     $("#main").load("../page/notebook/md_display.html", function(){$("#category").val('db2')});
+      $("#db2").attr("class", "active bd-sidenav-active");
+      $("#notebook_main").load("../page/notebook/md_display.html", function(){$("#category").val('db/db2')});
+    } else {
+      $("#db2").attr("class", "");
     }
     if (arg == 'mysql') {
-     $("#mysql").attr("class", "active bd-sidenav-active");
-     $("#oracle").attr("class", "");
-     $("#db2").attr("class", "");
-     $("#sybase").attr("class", "");
-     $("#postgre").attr("class", "");
-     $("#main").load("../page/notebook/md_display.html", function(){$("#category").val('mysql')});
-    }
-    if (arg == 'postgre') {
-     $("#postgre").attr("class", "active bd-sidenav-active");
-     $("#mysql").attr("class", "");
-     $("#oracle").attr("class", "");
-     $("#db2").attr("class", "");
-     $("#sybase").attr("class", "");
-     $("#main").load("../page/notebook/md_display.html", function(){$("#category").val('postgre')});
+      $("#mysql").attr("class", "active bd-sidenav-active");
+      $("#notebook_main").load("../page/notebook/md_display.html", function(){$("#category").val('db/mysql')});
+    } else {
+      $("#mysql").attr("class", "");
     }
     if (arg == 'sybase') {
-     $("#sybase").attr("class", "active bd-sidenav-active");
-     $("#mysql").attr("class", "");
-     $("#oracle").attr("class", "");
-     $("#db2").attr("class", "");
-     $("#postgre").attr("class", "");
-     $("#main").load("../page/notebook/md_display.html", function(){$("#category").val('sybase')});
+      $("#sybase").attr("class", "active bd-sidenav-active");
+      $("#notebook_main").load("../page/notebook/md_display.html", function(){$("#category").val('db/sybase')});
+    } else {
+      $("#sybase").attr("class", "");
+    }
+    if (arg == 'postgre') {
+      $("#postgre").attr("class", "active bd-sidenav-active");
+      $("#notebook_main").load("../page/notebook/md_display.html", function(){$("#category").val('db/postgre')});
+    } else {
+      $("#postgre").attr("class", "");
+    }
+    if (arg == 'java') {
+      $("#java").attr("class", "active bd-sidenav-active");
+      $("#notebook_main").load("../page/notebook/md_display.html", function(){$("#category").val('language/java')});
+    } else {
+      $("#java").attr("class", "");
+    }
+    if (arg == 'javascript') {
+      $("#javascript").attr("class", "active bd-sidenav-active");
+      $("#notebook_main").load("../page/notebook/md_display.html", function(){$("#category").val('language/javascript')});
+    } else {
+      $("#javascript").attr("class", "");
+    }
+    if (arg == 'c') {
+      $("#c").attr("class", "active bd-sidenav-active");
+      $("#notebook_main").load("../page/notebook/md_display.html", function(){$("#category").val('language/c')});
+    } else {
+      $("#c").attr("class", "");
+    }
+    if (arg == 'python') {
+      $("#python").attr("class", "active bd-sidenav-active");
+      $("#notebook_main").load("../page/notebook/md_display.html", function(){$("#category").val('language/python')});
+    } else {
+      $("#python").attr("class", "");
+    }
+    if (arg == 'vb') {
+      $("#vb").attr("class", "active bd-sidenav-active");
+      $("#notebook_main").load("../page/notebook/md_display.html", function(){$("#category").val('language/vb')});
+    } else {
+      $("#vb").attr("class", "");
     }
   }
 </script>
@@ -74,37 +111,51 @@
     </form>
     <nav class="collapse bd-links" id="bd-docs-nav">
       <div class="bd-toc-item active">
-        <a class="bd-toc-link" href="javascript:display_db('db');">
+        <a class="bd-toc-link" href="javascript:display_detail('db');">
           Data base
         </a>
         <ul class="nav bd-sidenav">
           <li id="oracle" style="display:none;">
-            <a href="javascript:change_category('oracle');" >Oracle</a>
+            <a href="javascript:change_category('oracle');" >&nbsp;Oracle</a>
           </li>
           <li id="db2" style="display:none;">
-            <a href="javascript:change_category('db2');">DB2</a>
+            <a href="javascript:change_category('db2');">&nbsp;DB2</a>
           </li>
           <li id="mysql" style="display:none;">
-            <a href="javascript:change_category('mysql');">Mysql</a>
+            <a href="javascript:change_category('mysql');">&nbsp;Mysql</a>
           </li>
           <li id="sybase" style="display:none;">
-            <a href="javascript:change_category('sybase');">Sybase</a>
+            <a href="javascript:change_category('sybase');">&nbsp;Sybase</a>
           </li>
           <li id="postgre" style="display:none;">
-            <a href="javascript:change_category('postgre');">Postgresql</a>
+            <a href="javascript:change_category('postgre');">&nbsp;Postgresql</a>
           </li>
         </ul>
-        <a class="bd-toc-link" href="javascript:change_category('language');">
+        <a class="bd-toc-link" href="javascript:display_detail('language');">
           Language
         </a>
-        <a class="bd-toc-link" href="javascript:change_category('language');">
-          Design patterns
-        </a>
+        <ul class="nav bd-sidenav">
+          <li id="java" style="display:none;">
+            <a href="javascript:change_category('java');" >&nbsp;Java</a>
+          </li>
+          <li id="javascript" style="display:none;">
+            <a href="javascript:change_category('javascript');">&nbsp;Javascript</a>
+          </li>
+          <li id="c" style="display:none;">
+            <a href="javascript:change_category('c');">&nbsp;C</a>
+          </li>
+          <li id="python" style="display:none;">
+            <a href="javascript:change_category('python');">&nbsp;Python</a>
+          </li>
+          <li id="vb" style="display:none;">
+            <a href="javascript:change_category('vb');">&nbsp;Vb</a>
+          </li>
+        </ul>
        
       </div>
     </nav>
   </div>
 
-  <main id="main" class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">内容</main>
-  <script>$("#main").load("page/notebook/readme.html");</script>
+  <main id="notebook_main" class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">内容</main>
+  <script>$("#notebook_main").load("page/notebook/readme.html");</script>
 </div>
