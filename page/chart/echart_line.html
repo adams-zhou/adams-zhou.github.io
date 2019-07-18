@@ -1,7 +1,6 @@
-
 <script>
 $(function(){
-	$.getJSON("http://api.finance.ifeng.com/akdaily/?code=sh000001&type=last", function(json){
+    $.getJSON("http://api.finance.ifeng.com/akdaily/?code=sh000001&type=last", function(json){
     if (true === json.Status) {
     	$.each(json.record, function(index, item) {
     		console.log(index);
