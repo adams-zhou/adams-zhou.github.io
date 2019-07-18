@@ -32,7 +32,7 @@
     <script>
       $(document).ready(function(){
         $.ajax({
-          url:"http://hq.sinajs.cn/list=sh000001",
+          url:"https://hq.sinajs.cn/list=sh000001",
           dataType:"script",
           cache:"false",
           type:"GET",
@@ -52,7 +52,7 @@
       function get_price(){
         var stock_code = $("#stock_code").val();
         $.ajax({
-          url:"http://hq.sinajs.cn/list=" + stock_code,
+          url:"https://hq.sinajs.cn/list=" + stock_code,
           dataType:"script",
           cache:"false",
           type:"GET",
