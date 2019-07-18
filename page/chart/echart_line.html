@@ -1,3 +1,18 @@
+
+<script>
+$(function(){
+	$.getJSON("http://api.finance.ifeng.com/akdaily/?code=sh000001&type=last", function(json){
+    if (true === json.Status) {
+    	$.each(json.record, function(index, item) {
+    		console.log(index);
+    		console.log(item);
+    	}
+    } else {
+    	console.error('ERROR: ' + json.StatusMessage);
+    }
+  });
+});
+</script>
 <div>
-Echart line display
+  test
 </div>
