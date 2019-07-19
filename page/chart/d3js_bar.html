@@ -17,7 +17,7 @@ $(function(){
       .then((data) => {
           return data.map((d) => {
             d.frequency = +d.frequency;
-
+            console.log(d.frequency);
             return d;  
           });
       })
