@@ -39,7 +39,7 @@
           success:function(data){
             str = hq_str_sh000001.substring(hq_str_sh000001.indexOf("\"")+1,hq_str_sh000001.length -1).split(",");
             console.log(str[0] + str[1] + str[2]);
-            $("#szzs").text(str[0] + ",今日收盘价" + str[1] + ",昨日收盘价:" + str[2]);
+            $("#szzs").text(str[0] + ",今日收盘价" + str[3] + ",昨日收盘价:" + str[2]);
           }
         });
       });
@@ -61,7 +61,7 @@
             console.log(stock_code);
             str = sina_return.substring(sina_return.indexOf("\"")+1,sina_return.length -1).split(",");
             console.log(str[0] + str[1] + str[2]);
-            $("#stock_price").text(str[0] + ",今日收盘价" + str[1] + ",昨日收盘价:" + str[2]);
+            $("#stock_price").text(str[0] + ",今日收盘价" + str[3] + ",昨日收盘价:" + str[2]);
           }
         });
         
