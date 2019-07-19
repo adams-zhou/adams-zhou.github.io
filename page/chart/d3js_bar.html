@@ -1,12 +1,12 @@
 D3js bar display
-<svg width="960" height="500"></svg>
+<svg id="d3js_bar_content" width="960" height="500"></svg>
 <script>
 $(function(){
-  var svg = d3.select("svg"),
+  var svg = d3.select("#d3js_bar_content"),
       margin = {top: 20, right: 20, bottom: 30, left: 40},
       width = +svg.attr("width") - margin.left - margin.right,
       height = +svg.attr("height") - margin.top - margin.bottom;
-
+  console.log(height);
   var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
       y = d3.scaleLinear().rangeRound([height, 0]);
 
