@@ -1,5 +1,5 @@
 D3js line display
-<div id="d3js_line">
+<div id="d3js_line_content">
 </div>
 <script>
 
@@ -32,7 +32,7 @@ $(function(){
 	var dataset = d3.range(n).map(function(d) { return {"y": d3.randomUniform(1)() } })
 
 	// 1. Add the SVG to the page and employ #2
-	var svg = d3.select("#d3js_line").append("svg")
+	var svg = d3.select("#d3js_line_content").append("svg")
 	    .attr("width", width + margin.left + margin.right)
 	    .attr("height", height + margin.top + margin.bottom)
 	  .append("g")
