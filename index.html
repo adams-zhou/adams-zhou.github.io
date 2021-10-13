@@ -82,12 +82,13 @@
         </li>
       </ul>
     </div>
-   </header>
+    <div id="counter">
+      Counter: {{ counter }}
+      {{ message }}
+    </div>
+  </header>
   <div id="content" class="content"><div>
   <script>$("#content").load("page/home.html");</script>
-  <div id="counter">
-    Counter: {{ counter }}
-    {{ message }}
-  </div>
+  
 </body>
 </html>
