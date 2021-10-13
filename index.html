@@ -48,7 +48,8 @@
     const Counter = {
       data() {
         return {
-          counter: 0
+          counter: 0,
+	  message: "hello vue3！！！"
         }
       }
     }
@@ -86,6 +87,7 @@
   <script>$("#content").load("page/home.html");</script>
   <div id="counter">
     Counter: {{ counter }}
+    {{ message }}
   </div>
 </body>
 </html>
