@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/font-awesome.min.css" />
   <link rel="stylesheet" type="text/css" href="./assets/css/docs.min.css" />
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+  <script src="https://unpkg.com/vue@next"></script>
   <title>adams_zhou blog</title>
   <script type="text/javascript">
      function change_page(arg) {
@@ -44,6 +45,15 @@
         $("#content").load("md/demo.md");
       }
     }
+    const Counter = {
+      data() {
+        return {
+          counter: 0
+        }
+      }
+    }
+
+    Vue.createApp(Counter).mount('#counter')
   </script>
 </head>
 <body>
@@ -74,5 +84,8 @@
    </header>
   <div id="content" class="content"><div>
   <script>$("#content").load("page/home.html");</script>
+  <div id="counter">
+    Counter: {{ counter }}
+  </div>
 </body>
 </html>
