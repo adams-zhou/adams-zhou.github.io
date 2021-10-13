@@ -9,7 +9,6 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/font-awesome.min.css" />
   <link rel="stylesheet" type="text/css" href="./assets/css/docs.min.css" />
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-  <script src="./assets/js/vue3.js"></script>
   <title>adams_zhou blog</title>
   <script type="text/javascript">
      function change_page(arg) {
@@ -45,16 +44,7 @@
         $("#content").load("md/demo.md");
       }
     }
-    const Counter = {
-      data() {
-        return {
-          counter: 0,
-	  message: "hello vue3！！！"
-        }
-      }
-    }
     
-    Vue.createApp(Counter).mount('#counter')
   </script>
 </head>
 <body>
@@ -82,10 +72,6 @@
           <a class="nav-link" id="aboutme" href="javascript:change_page('aboutme')">about me</a>
         </li>
       </ul>
-    </div>
-    <div id="counter">
-      Counter: {{ counter }}
-      {{ message }}
     </div>
   </header>
   <div id="content" class="content"><div>
