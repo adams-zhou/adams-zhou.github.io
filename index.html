@@ -75,7 +75,7 @@
       </ul>
       <div id="counter">
         Counter: {{ counter }} {{ message }}
-        <button type="button" class="btn btn-primary" @click="alert(test_methods())">Primary</button>
+        <button type="button" class="btn btn-primary" @click="counter += 1">Primary</button>
       </div>
     </div>
     <script>
@@ -85,11 +85,6 @@
             counter: 0,
             message: "hello vue3!!!"
           }
-        }
-      },
-      methods: {
-        test_methods() {
-          return "test_methods"
         }
       }
       Vue.createApp(Counter).mount('#counter')
