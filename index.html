@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <title>adams_zhou blog</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/font-awesome.min.css" />
   <link rel="stylesheet" type="text/css" href="./assets/css/docs.min.css" />
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-  <title>adams_zhou blog</title>
+  <script src="https://unpkg.com/vue@next"></script>
   <script type="text/javascript">
      function change_page(arg) {
       if (arg == 'home') {
@@ -72,8 +73,23 @@
           <a class="nav-link" id="aboutme" href="javascript:change_page('aboutme')">about me</a>
         </li>
       </ul>
+      <div id="counter">
+        Counter: {{ counter }} {{ message }}
+      </div>
     </div>
+    <script>
+      const Counter = {
+      data() {
+          return {
+            counter: 0,
+            message: "hello vue3!!!"
+          }
+        }
+      }
+      Vue.createApp(Counter).mount('#counter')
+    </script>
   </header>
+  
   <div id="content" class="content"><div>
   <script>$("#content").load("page/home.html");</script>
   
